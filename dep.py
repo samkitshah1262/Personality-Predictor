@@ -1,0 +1,7 @@
+import nltk
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+class Lemmatizer(object):
+    def __init__(self):
+        self.lemmatizer = WordNetLemmatizer()
+    def __call__(self, sentence):
+        return [self.lemmatizer.lemmatize(word) for word in sentence.split() if len(word)>2]
